@@ -39,14 +39,14 @@
         state: restarted
 # Restarting R1Soft Agent on CentOS6
     - name: Restart R1Soft Agent
-      when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+      when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")------check this version
       service:
         name: cdp-agent
         state: restarted
 
 # Restarting R1Soft Agent on CentOS7
     - name: Restart R1Soft Agent
-       when: (ansible_distribution == "Centos" and ansible_distribution_major_version == "7")
+       when: ('ansible_distribution == "Centos" and ansible_distribution_major_version == "7"')-----check this version
       systemd:
         name: sbm-agent
         state: restarted
